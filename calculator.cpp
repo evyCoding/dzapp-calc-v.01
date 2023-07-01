@@ -8,69 +8,129 @@
 
 //----------------classes--------------------------
 
-class calc {
-    public:
+class calc
+{
+public:
     float sum(float q, float p);
     float dif(float q, float p);
     float mult(float q, float p);
     float div(float q, float p);
+    float power(float q, float p);
 };
 
-class sci {
-    public:
+class sci
+{
+public:
     float cosc(float a);
     float sins(float a);
     float tant(float a);
+    float absa(float a);
+    float logl(float a);
 };
 
 //---------------fuctions-------------------------
 
-float calc::sum(float q, float p){
-           return q + p;
+float calc::sum(float q, float p)
+{
+    return q + p;
 }
-float calc::dif(float q, float p){
-           return q - p;
+float calc::dif(float q, float p)
+{
+    return q - p;
 }
-float calc::mult(float q, float p){
-           return q * p;
+float calc::mult(float q, float p)
+{
+    return q * p;
 }
-float calc::div(float q, float p){
-           return q / p;
+float calc::div(float q, float p)
+{
+    return q / p;
 }
-float sci::cosc(float a){
-          return cos(a);
+float sci::cosc(float a)
+{
+    return cos(a);
 }
-float sci::sins(float a){
-          return sin(a);
+float sci::sins(float a)
+{
+    return sin(a);
 }
-float sci::tant(float a){
-          return tan(a);
+float sci::tant(float a)
+{
+    return tan(a);
+}
+float sci::absa(float a)
+{
+    return abs(a);
+}
+float sci::logl(float a)
+{
+    return log(a);
+}
+float calc::power(float q, float p)
+{
+    return pow(q, p);
 }
 //----------main code----------------------------
 
-int main(){
+int main()
+{
     calc obj;
     sci ob;
     std::string p;
-    std::cout<<"do you need the scientific vr (y/n) ";
-    std::cin>>p;
-    if(p == "y"){
+    std::cout << "do you need the scientific vr (y/n) ";
+    std::cin >> p;
+    if (p == "y")
+    {
         int c;
         std::string v;
-        std::cin>>v>>c;
-        if(v == "cos"){std::cout<<ob.cosc(c);}
-        if(v == "sin"){std::cout<<ob.sins(c);}
-        if(v == "tan"){std::cout<<ob.tant(c);}
-
+        std::cin >> v >> c;
+        if (v == "cos")
+        {
+            std::cout << ob.cosc(c);
+        }
+        if (v == "sin")
+        {
+            std::cout << ob.sins(c);
+        }
+        if (v == "tan")
+        {
+            std::cout << ob.tant(c);
+        }
+        if (v == "abs")
+        {
+            std::cout << ob.absa(c);
+        }
+        if (v == "log")
+        {
+            std::cout << ob.logl(c);
+        }
     }
-    if(p == "n"){
+    if (p == "n")
+    {
         float a, b;
         std::string c;
-        std::cin>>a>>c>>b;
-        if(c == "+"){std::cout<<obj.sum(a,b);}
-        if(c == "-"){std::cout<<obj.dif(a,b);}
-        if(c == "*"){std::cout<<obj.mult(a,b);}
-        if(c == "/"){std::cout<<obj.div(a,b);}
+        std::cin >> a >> c >> b;
+        if (c == "+")
+        {
+            std::cout << obj.sum(a, b);
+        }
+        if (c == "-")
+        {
+            std::cout << obj.dif(a, b);
+        }
+        if (c == "*")
+        {
+            std::cout << obj.mult(a, b);
+        }
+        if (c == "/")
+        {
+            std::cout << obj.div(a, b);
+        }
+        if (c == "^")
+        {
+            std::cout << obj.power(a, b);
+        }
     }
-    
-return 0;}
+
+    return 0;
+}
